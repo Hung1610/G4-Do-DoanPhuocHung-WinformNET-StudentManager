@@ -7,13 +7,13 @@ namespace AppG2.Migrations.ContactContext
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class initialdb : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialdb));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911301131268_initial db"; }
+            get { return "201912011356396_initial"; }
         }
         
         string IMigrationMetadata.Source

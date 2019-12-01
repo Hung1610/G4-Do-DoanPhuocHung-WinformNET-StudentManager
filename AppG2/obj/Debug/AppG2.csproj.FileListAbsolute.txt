@@ -35,10 +35,6 @@ E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\bin\Debug\EntityFramework.SqlServer.dl
 E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\bin\Debug\EntityFramework.xml
 E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\bin\Debug\EntityFramework.SqlServer.xml
 E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.csprojAssemblyReference.cache
-E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.View.frmContact.resources
-E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.View.frmContactInfo.resources
-E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.View.frmImport.resources
-E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.View.frmLogin.resources
 E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.frmThongTinSinhVien2.resources
 E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.frmTinhToanCoBan.resources
 E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.Properties.Resources.resources
@@ -47,4 +43,4 @@ E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.csproj.CoreCompileInpu
 E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.csproj.CopyComplete
 E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.exe
 E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.pdb
-E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.Migrations.ContactContext.initialdb.resources
+E:\C#-G4-DoDoanPhuocHung-16T1021069\AppG2\obj\Debug\AppG2.Migrations.ContactContext.initial.resources
