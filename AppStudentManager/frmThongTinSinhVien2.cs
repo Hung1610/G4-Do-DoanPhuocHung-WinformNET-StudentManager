@@ -55,7 +55,7 @@ namespace AppG2
                     }
                 }
             }
-            lblAvg.Text = ((decimal)(sum / count)).ToString();
+            lblAvg.Text = ((decimal)(sum / count)).ToString("#.##");
         }
 
         private void txtID_Leave(object sender, EventArgs e)
