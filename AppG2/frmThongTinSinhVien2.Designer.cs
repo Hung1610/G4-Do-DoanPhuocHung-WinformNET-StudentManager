@@ -31,8 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongTinSinhVien2));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.tabPanel = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabVan = new System.Windows.Forms.TabPage();
             this.txtVHHD = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.txtVHCD = new System.Windows.Forms.NumericUpDown();
@@ -79,12 +81,10 @@
             this.toolBtnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolBtnUpdate = new System.Windows.Forms.ToolStripButton();
             this.toolBtnRefresh = new System.Windows.Forms.ToolStripButton();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPanel.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabVan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtVHHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVHCD)).BeginInit();
             this.tabVL.SuspendLayout();
@@ -130,9 +130,27 @@
             this.panel2.Size = new System.Drawing.Size(378, 339);
             this.panel2.TabIndex = 1;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label14.Location = new System.Drawing.Point(192, 22);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 13);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Student ID";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(266, 21);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 8;
+            this.txtID.Leave += new System.EventHandler(this.txtID_Leave);
+            // 
             // tabPanel
             // 
-            this.tabPanel.Controls.Add(this.tabPage1);
+            this.tabPanel.Controls.Add(this.tabVan);
             this.tabPanel.Controls.Add(this.tabVL);
             this.tabPanel.Controls.Add(this.tabCNTT);
             this.tabPanel.Location = new System.Drawing.Point(7, 132);
@@ -141,19 +159,19 @@
             this.tabPanel.Size = new System.Drawing.Size(359, 170);
             this.tabPanel.TabIndex = 7;
             // 
-            // tabPage1
+            // tabVan
             // 
-            this.tabPage1.Controls.Add(this.txtVHHD);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.txtVHCD);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(351, 144);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Văn";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabVan.Controls.Add(this.txtVHHD);
+            this.tabVan.Controls.Add(this.label6);
+            this.tabVan.Controls.Add(this.txtVHCD);
+            this.tabVan.Controls.Add(this.label5);
+            this.tabVan.Location = new System.Drawing.Point(4, 22);
+            this.tabVan.Name = "tabVan";
+            this.tabVan.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVan.Size = new System.Drawing.Size(351, 144);
+            this.tabVan.TabIndex = 0;
+            this.tabVan.Text = "Văn";
+            this.tabVan.UseVisualStyleBackColor = true;
             // 
             // txtVHHD
             // 
@@ -513,21 +531,21 @@
             // toolMenuVan
             // 
             this.toolMenuVan.Name = "toolMenuVan";
-            this.toolMenuVan.Size = new System.Drawing.Size(180, 22);
+            this.toolMenuVan.Size = new System.Drawing.Size(119, 22);
             this.toolMenuVan.Text = "SV Văn";
             this.toolMenuVan.Click += new System.EventHandler(this.ToolMenuVan_Click);
             // 
             // toolMenuVL
             // 
             this.toolMenuVL.Name = "toolMenuVL";
-            this.toolMenuVL.Size = new System.Drawing.Size(180, 22);
+            this.toolMenuVL.Size = new System.Drawing.Size(119, 22);
             this.toolMenuVL.Text = "SV Vật lý";
             this.toolMenuVL.Click += new System.EventHandler(this.ToolMenuVL_Click);
             // 
             // toolMenuCNTT
             // 
             this.toolMenuCNTT.Name = "toolMenuCNTT";
-            this.toolMenuCNTT.Size = new System.Drawing.Size(180, 22);
+            this.toolMenuCNTT.Size = new System.Drawing.Size(119, 22);
             this.toolMenuCNTT.Text = "SV CNTT";
             this.toolMenuCNTT.Click += new System.EventHandler(this.ToolMenuCNTT_Click);
             // 
@@ -561,23 +579,6 @@
             this.toolBtnRefresh.Text = "Bỏ cập nhật";
             this.toolBtnRefresh.Click += new System.EventHandler(this.ToolBtnRefresh_Click);
             // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(266, 21);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 8;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label14.Location = new System.Drawing.Point(192, 22);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 13);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "Student ID";
-            // 
             // frmThongTinSinhVien2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -594,8 +595,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabPanel.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabVan.ResumeLayout(false);
+            this.tabVan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtVHHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVHCD)).EndInit();
             this.tabVL.ResumeLayout(false);
@@ -643,7 +644,7 @@
         private System.Windows.Forms.Label lblAvg;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabControl tabPanel;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabVan;
         private System.Windows.Forms.TabPage tabVL;
         private System.Windows.Forms.TabPage tabCNTT;
         private System.Windows.Forms.ToolStripDropDownButton saveToolStripButton;

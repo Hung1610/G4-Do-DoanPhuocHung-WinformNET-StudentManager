@@ -31,15 +31,58 @@ namespace AppG2
         private void ChkListStudent_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentStudent = (Student)chkListStudent.SelectedItem;
+            tabPanel.TabPages.Remove(tabVL);
+            tabPanel.TabPages.Remove(tabCNTT);
+            tabPanel.TabPages.Remove(tabVan);
+            if (currentStudent.Major == Model.MAJOR.CNTT)
+                tabPanel.TabPages.Add(tabCNTT);
+            else if (currentStudent.Major == Model.MAJOR.Van)
+                tabPanel.TabPages.Add(tabVan);
+            else
+                tabPanel.TabPages.Add(tabVL);
             showStudent(currentStudent);
+            var count = 0;
+            decimal sum = 0;
+            foreach (TabPage tab in tabPanel.TabPages)
+            {
+                foreach (Control control in tab.Controls)
+                {
+                    if (control is NumericUpDown)
+                    {
+                        NumericUpDown numControl = control as NumericUpDown;
+                        count++;
+                        sum += numControl.Value;
+                    }
+                }
+            }
+            lblAvg.Text = ((decimal)(sum / count)).ToString();
+        }
+
+        private void txtID_Leave(object sender, EventArgs e)
+        {
+            currentStudent = StudentService.Get(txtID.Text);
+            if (currentStudent == null)
+            {
+                currentStudent = new Student();
+                if (!tabPanel.Controls.Contains(tabVL)) tabPanel.Controls.Add(tabVL);
+                if (!tabPanel.Controls.Contains(tabCNTT)) tabPanel.Controls.Add(tabCNTT);
+                if (!tabPanel.Controls.Contains(tabVan)) tabPanel.Controls.Add(tabVan);
+            }
+            var tempStudentId = txtID.Text;
+            showStudent(currentStudent);
+            txtID.Text = tempStudentId;
         }
 
         private void ToolBtnUpdate_Click(object sender, EventArgs e)
         {
-            getStudent();
-            currentStudent = StudentService.Update(currentStudent);
-            showStudent(currentStudent);
-            refreshAll();
+            DialogResult res = MessageBox.Show("Are you sure you want to Update this student ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                getStudent();
+                currentStudent = StudentService.Update(currentStudent);
+                showStudent(currentStudent);
+                refreshAll();
+            }
         }
 
         private void ToolBtnRefresh_Click(object sender, EventArgs e)
@@ -79,8 +122,15 @@ namespace AppG2
 
         private void ToolBtnDelete_Click(object sender, EventArgs e)
         {
-            StudentService.Delete(currentStudent);
-            refreshAll();
+            DialogResult res = MessageBox.Show("Are you sure you want to Delete these students ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                foreach (Student selectedStudent in chkListStudent.CheckedItems)
+                {
+                    StudentService.Delete(selectedStudent);
+                }
+                refreshAll();
+            }
         }
 
         private void refreshAll()

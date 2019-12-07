@@ -76,7 +76,7 @@ namespace AppG2.Services
         }
         public static Student Get(string id)
         {
-            return new DbContext().Students.Find(id);
+            return new DbContext().Students.Where(s => s.StudentId.Equals(id)).FirstOrDefault();
         }
         public static void Delete(Student student)
         {
