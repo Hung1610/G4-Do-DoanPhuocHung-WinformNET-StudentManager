@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmStudentManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentManager.Designer.cs">
+      <DependentUpon>frmStudentManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ContactContext\201912011356396_initial.cs" />
     <Compile Include="Migrations\ContactContext\201912011356396_initial.Designer.cs">
       <DependentUpon>201912011356396_initial.cs</DependentUpon>
@@ -74,6 +80,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmStudentManager.resx">
+      <DependentUpon>frmStudentManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinSinhVien2.resx">
       <DependentUpon>frmThongTinSinhVien2.cs</DependentUpon>
     </EmbeddedResource>
